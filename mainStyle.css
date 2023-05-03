@@ -36,9 +36,9 @@ ul.menu {
     padding: 14px 16px;
     text-decoration: none;
   }
-  li.menu a:hover:not(.active) {
+  li.menu a:hover:not(#active) {
     background-color: #111;
   }
-  .active {
+  #active {
     background-color: #020020;
   }
