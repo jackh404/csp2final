@@ -12,6 +12,7 @@ h1{
     width: 1200px;
     max-width: 85%;
     margin:auto;
+    padding:20px;
     padding-top: 40px;
 }
 ul.menu {
@@ -39,5 +40,5 @@ ul.menu {
     background-color: #111;
   }
   .active {
-    background-color: #04AA6D;
+    background-color: #020020;
   }
