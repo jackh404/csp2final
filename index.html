@@ -6,16 +6,35 @@
     <title>Home</title>
     <link rel="stylesheet" href="mainStyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="scripts.js"></script>
   </head>
   <body>
     <div class = "menu">
       <ul class = menu>
         <li class = menu id="active"><a href="index.html">Home</a></li>
-        <li class = menu><a href="croc.html">Croc</a></li>
+        <li class = menu><a href="solar.html">Solar</a></li>
+        <li class = menu><a href="wind.html">Wind</a></li>
     </ul>
     </div>
     <div class = "container">
       <h1>Renewable Energy</h1>
+      <p>Renewable energy is energy that comes from a source that cannot be depleted on a relevant timescale. For example, we believe that fossil fuels beneath the earth's surface are a finite resource that could run out in the next century, and therefore are not renewable. On the other hand, energy from the sun will continue to strike the earth for the next 4 billion years, and we cannot deplete it any faster by making use of it with solar panels.</p>
+      <div class="slideshow">
+        <table class = "slideshow"><tr>
+        <td><button class = "slideshow" onclick ="theSlide(-1)">◄</button></td>
+        <td><img class = "slideshow" id = "slideshow" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg"></td>
+        <td><button class = "slideshow" onclick ="theSlide(1)">►</button></td>
+      </tr></table></div>
     </div>
+    <script>
+      var index = 0;
+      var slides = ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/R%C3%B8nland_Offshore_Wind_Farm_%285%29.jpg/640px-R%C3%B8nland_Offshore_Wind_Farm_%285%29.jpg"]
+      $lider = $("#slideshow");
+      function theSlide(way)
+      {
+        index = slide($lider,slides,way,index);
+        console.log(index);
+      }
+    </script>
   </body>
 </html>
