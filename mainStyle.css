@@ -7,6 +7,9 @@ h1{
     text-align: center;
     text-decoration: underline;
 }
+h3{
+  text-align: center;
+}
 .container{
     background-color: #a2d2e0;
     width: 1200px;
@@ -50,7 +53,16 @@ ul.menu {
   }
   img.slideshow
   {
+    display:block;
+    margin:auto;
     max-width: 100%;
+    padding:3px;
+  }
+  img.slideshow:hover{
+    opacity: 80%;
+    border-width: 3px;
+    border-style: inset;
+    padding: 0px;
   }
   button.slideshow
   {

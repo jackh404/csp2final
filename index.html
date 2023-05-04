@@ -22,18 +22,35 @@
       <div class="slideshow">
         <table class = "slideshow"><tr>
         <td><button class = "slideshow" onclick ="theSlide(-1)">◄</button></td>
-        <td><img class = "slideshow" id = "slideshow" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg"></td>
+        <td width = 90%><a href="solar.html" class ="slideshow"><img class = "slideshow" id = "slideshow" alt="Photovoltaic panels on a roof" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg"></a><h3 id = "caption">Photovoltaics</h3></td>
         <td><button class = "slideshow" onclick ="theSlide(1)">►</button></td>
       </tr></table></div>
     </div>
     <script>
       var index = 0;
-      var slides = ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/R%C3%B8nland_Offshore_Wind_Farm_%285%29.jpg/640px-R%C3%B8nland_Offshore_Wind_Farm_%285%29.jpg"]
+      var slides = [
+        new Slide("Photovoltaics",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg","Photovoltaic panels on a roof","solar.html"),
+
+        new Slide("Wind Power",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/R%C3%B8nland_Offshore_Wind_Farm_%285%29.jpg/640px-R%C3%B8nland_Offshore_Wind_Farm_%285%29.jpg","Offshore wind farm","wind.html"),
+
+        new Slide("Hydroelectric Power",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Embalse_de_Santa_Ana.jpg/640px-Embalse_de_Santa_Ana.jpg","A hydroelectric dam in an arid landscape"),
+
+        new Slide("Solar Thermal",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Thermal_solar_panel_on_roof.JPG/640px-Thermal_solar_panel_on_roof.JPG","An evacuated tube solar thermal panel on a roof"),
+        new Slide("Concentrating Solar Power",
+
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ho_000159_170597_515219_4578_%2836643884261%29.jpg/640px-Ho_000159_170597_515219_4578_%2836643884261%29.jpg","A concentrating solar power plant; a central tower surrounded by mirrors")
+      ];
+
       $lider = $("#slideshow");
+      $caption = $("#caption");
+      $link = $("a.slideshow");
       function theSlide(way)
       {
-        index = slide($lider,slides,way,index);
-        console.log(index);
+        index = slide($lider,slides,way,$caption,$link,index);
       }
     </script>
   </body>
