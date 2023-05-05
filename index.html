@@ -9,12 +9,7 @@
     <script src="scripts.js"></script>
   </head>
   <body>
-    <div class = "menu">
-      <ul class = menu>
-        <li class = menu id="active"><a href="index.html">Home</a></li>
-        <li class = menu><a href="solar.html">Solar</a></li>
-        <li class = menu><a href="wind.html">Wind</a></li>
-    </ul>
+    <div id = "nav">
     </div>
     <div class = "container">
       <h1>Renewable Energy</h1>
@@ -27,6 +22,7 @@
       </tr></table></div>
     </div>
     <script>
+      navMenu($("#nav"));
       var index = 0;
       var slides = [
         new Slide("Photovoltaics",
