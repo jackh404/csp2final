@@ -4,11 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Solar</title>
+    <!-- Import the common stylesheet -->
     <link rel="stylesheet" href="mainStyle.css">
+
+    <!-- Import the common scripts file -->
     <script src="scripts.js"></script>
+
+    <!-- Import jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Import p5.js for the interactive drawing element -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
     <script>
+      //load the common nav menu from a separate file
       $(document).ready(function(){$("#nav").load("menu.html")});
     </script>
   </head>
@@ -16,9 +24,9 @@
     <div id = "nav"></div>
     <div class = "container">
       <h1>Photovoltaic Power</h1>
+      <p>Photovoltaic panels harvest energy directly from the sun and convert it into electricity. Photons strike the semiconducting material of the panel dislodging electrons and creating an imbalanced electrical charge. This forces electricity to move through a circuit in order to rebalance the charge.</p>
       <h3>Draw sun rays to power the solar panel!</h3>
       <div id="sketch"></div><br>
-      <p>Photovoltaic panels harvest energy directly from the sun and convert it into electricity. Photons strike the semiconducting material of the panel dislodging electrons and creating an imbalanced electrical charge. This forces electricity to move through a circuit in order to rebalance the charge.</p>
     </div>
     <script>
       //load solar panel image to be used in p5.js canvas

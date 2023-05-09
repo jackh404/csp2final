@@ -4,9 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Home</title>
+    <!-- Import the common stylesheet -->
     <link rel="stylesheet" href="mainStyle.css">
+
+    <!-- Import jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Import the common scripts file -->
     <script src="scripts.js"></script>
+
     <script>
       //Loads the main nav menu from menu.html
       $(document).ready(function(){$("#nav").load("menu.html");
@@ -19,15 +25,22 @@
     <div class = "container">
       <h1>Renewable Energy</h1>
       <p>Renewable energy is energy that comes from a source that cannot be depleted on a relevant timescale. For example, we believe that fossil fuels beneath the earth's surface are a finite resource that could run out in the next century, and therefore are not renewable. On the other hand, energy from the sun will continue to strike the earth for the next 4 billion years, and we cannot deplete it any faster by making use of it with solar panels.</p>
+      <!-- Slideshow container -->
       <div class="slideshow">
+        <!-- Slideshow table for formatting -->
         <table class = "slideshow"><tr>
         <td><button class = "slideshow" onclick ="theSlide(-1)">◄</button></td>
+        <!-- Slideshow image and caption. Shows Solar image by default. -->
         <td width = 90%><a href="solar.html" class ="slideshow"><img class = "slideshow" id = "slideshow" alt="Photovoltaic panels on a roof" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg"></a><h3 id = "caption">Photovoltaics</h3></td>
         <td><button class = "slideshow" onclick ="theSlide(1)">►</button></td>
       </tr></table></div>
     </div>
     <script>
       var index = 0;
+
+      /*Slideshow slide objects as defined in scripts.js. each object
+      contains a caption, an image url, an alt text, and a link url
+      to the relevant page on this site.*/
       var slides = [
         new Slide("Photovoltaics",
         "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Instalaci%C3%B3n_de_paneles_solares.jpg/640px-Instalaci%C3%B3n_de_paneles_solares.jpg","Photovoltaic panels on a roof","solar.html"),
@@ -45,9 +58,14 @@
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Ho_000159_170597_515219_4578_%2836643884261%29.jpg/640px-Ho_000159_170597_515219_4578_%2836643884261%29.jpg","A concentrating solar power plant; a central tower surrounded by mirrors","csp.html")
       ];
 
+      /*Get the relevant elements using jquery to change for the
+      slideshow*/
       $lider = $("#slideshow");
       $caption = $("#caption");
       $link = $("a.slideshow");
+
+      /*calls slideshow function defined in scripts.js, passing in
+      the elements involved as well as the list of Slide objects*/
       function theSlide(way)
       {
         index = slide($lider,slides,way,$caption,$link,index);
