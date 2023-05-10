@@ -22,11 +22,13 @@
   </head>
   <body>
     <div id = "nav"></div>
-    <div class = "container">
+    <div class = "container" style = "background-image: url('photovoltaic-2138992_1920.jpg')">
+      <div class = "overlay">
       <h1>Photovoltaic Power</h1>
       <p>Photovoltaic panels harvest energy directly from the sun and convert it into electricity. Photons strike the semiconducting material of the panel dislodging electrons and creating an imbalanced electrical charge. This forces electricity to move through a circuit in order to rebalance the charge.</p>
       <h3>Draw sun rays to power the solar panel!</h3>
       <div id="sketch"></div><br>
+    </div>
     </div>
     <script>
       //load solar panel image to be used in p5.js canvas
@@ -66,7 +68,7 @@
       initially cliked and where it was released*/
       function mouseReleased(){
           rays.push(new Ray(x1,y1,mouseX,mouseY));
-          console.log(rays);
+          //console.log(rays);
       }
       //draw funtion runs repeatedly
       function draw(){
