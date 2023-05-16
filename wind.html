@@ -4,10 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Wind</title>
+
+    <!-- Import the common stylesheet -->
     <link rel="stylesheet" href="mainStyle.css">
+
+    <!-- Import the common scripts file -->
     <script src="scripts.js"></script>
+
+    <!-- Import jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Import p5.js for the interactive drawing element -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+
     <script>
+      //load the common nav menu from a separate file
       $(document).ready(function(){$("#nav").load("menu.html")});
     </script>
   </head>
@@ -17,7 +28,67 @@
       <div class = "overlay">
       <h1>Wind Energy</h1>
       <p>As moving air passes around the blades of a wind turbine, it causes them to rotate. This transfers kinetic energy directly from the wind to the turbine iteslf, which is then converted into electricity by a generator.</p>
-    </div>
-    </div>
+      <h3>Click to add wind turbines to the scene!</h3>
+    <div id = "sketch"><!--p5.js sketch (code below) goes here--></div><br>
+    </div></div>
+     <script>
+      //load solar panel image to be used in p5.js canvas
+      let img;
+      function preload(){
+        img=loadImage("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/WY_Redds_Great_plains.jpg/640px-WY_Redds_Great_plains.jpg");
+      }
+      //p5.js setup function. runs once.
+      function setup() {
+        //Create initial canvas
+        var canvas = createCanvas(600, 450);
+        canvas.parent("sketch");
+        frameRate(30);
+      }
+
+      //defines a turbine object as merely a point on the canvas and a starting angle
+      //of 0
+      WindTurbine = function(x,y){
+        this.x=x;
+        this.y=y;
+        this.a = 0;
+      }
+      //function to draw an individual wind turbine. Size is relative to the turbine's
+      //y position in order to give a sense of scale and distance.
+      WindTurbine.prototype.draw = function(){
+        fill(255);
+        rect(this.x,this.y,this.y/16,-(this.y/2));
+        square(this.x-this.y/84,this.y/2-this.y/24,this.y/12);
+        push();
+        translate(this.x+this.y/32,this.y/2,this.y/3);
+        rotate(120+this.a);
+        ellipse(0,-this.y/6,this.y/20,this.y/3);
+        rotate(120);
+        ellipse(0,-this.y/6,this.y/20,this.y/3);
+        rotate(120);
+        ellipse(0,-this.y/6,this.y/20,this.y/3);
+        pop();
+        circle(this.x+this.y/32,this.y/2,this.y/16);
+        this.a+=2;
+      }
+
+      //list to hold turbine objects
+      turbines = [];
+
+      //creates a turbine object where the mouse is clicked, as long as it is below a certain
+      //point (no floating turbines in the sky)
+      function mousePressed(){
+        if(mouseY > 200){
+          turbines.push(new WindTurbine(mouseX,mouseY));
+        }
+      }
+      //draw funtion runs repeatedly
+      function draw(){
+        angleMode(DEGREES);
+        image(img,0,0,600);
+        for(var i = 0; i < turbines.length; i++){
+          turbines[i].draw();
+        }
+      }
+      </script>
   </body>
 </html>
