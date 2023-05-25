@@ -95,3 +95,23 @@ ul.menu {
     justify-content: center;
     align-items: center;
   }
+  .watchFace{
+    height:400px;
+    width: 400px;
+    margin: auto;
+    position: relative;
+  }
+  .lit{
+    height:40px;
+    width:40px;
+    background-color: #a2d2e0;
+    border-radius: 20px;
+    position: absolute;
+  }
+  .dark{
+    height:40px;
+    width:40px;
+    background-color: #2b393da4;
+    border-radius: 20px;
+    position: absolute;
+  }

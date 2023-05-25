@@ -15,7 +15,35 @@
   <body>
     <div id = "nav"></div>
     <div class = "container">
-      <h1>Concentrating Solar Power</h1>
+      <div class = "overlay">
+      <h1>Binary Watch</h1>
+      <div class = "watchFace">
+        <div class = "lit" style = "left:0px;top:300px" id = "hour11"></div>
+        <div class = "lit" style = "left:0px;top:250px" id = "hour12"></div>
+        <div class = "lit" style = "left:50px;top:300px" id = "hour01"></div>
+        <div class = "lit" style = "left:50px;top:250px" id = "hour02"></div>
+        <div class = "lit" style = "left:50px;top:200px" id = "hour04"></div>
+        <div class = "lit" style = "left:50px;top:150px" id = "hour08"></div>
+        <div class = "lit" style = "left:120px;top:200px" id = "min14"></div>
+        <div class = "lit" style = "left:120px;top:250px" id = "min12"></div>
+        <div class = "lit" style = "left:120px;top:300px" id = "min11"></div>
+        <div class = "lit" style = "left:170px;top:200px" id = "min04"></div>
+        <div class = "lit" style = "left:170px;top:150px" id = "min08"></div>
+        <div class = "lit" style = "left:170px;top:250px" id = "min02"></div>
+        <div class = "dark" style = "left:170px;top:300px" id = "min01"></div>
+      </div>
+      </div>
     </div>
   </body>
+  <script>
+    setInterval(function(){
+      var now = new Date();
+      var hour = now.getHours();
+      if(hour>12){
+        hour-=12;
+      }
+      var min = now.getMinutes();
+      var sec = now.getSeconds();
+    },1000)
+  </script>
 </html>
