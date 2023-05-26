@@ -16,74 +16,11 @@
     <div id = "nav"></div>
     <div class = "container">
       <div class = "overlay">
-      <h1>Binary Watch</h1>
-      <div class = "watchFace">
-        <div class = "dark" style = "left:0px;top:300px" id = "hour11"></div>
-        <div class = "dark" style = "left:0px;top:250px" id = "hour12"></div>
-        <div class = "dark" style = "left:50px;top:300px" id = "hour01"></div>
-        <div class = "dark" style = "left:50px;top:250px" id = "hour02"></div>
-        <div class = "dark" style = "left:50px;top:200px" id = "hour04"></div>
-        <div class = "dark" style = "left:50px;top:150px" id = "hour08"></div>
-        <div class = "dark" style = "left:120px;top:200px" id = "min14"></div>
-        <div class = "dark" style = "left:120px;top:250px" id = "min12"></div>
-        <div class = "dark" style = "left:120px;top:300px" id = "min11"></div>
-        <div class = "dark" style = "left:170px;top:200px" id = "min04"></div>
-        <div class = "dark" style = "left:170px;top:150px" id = "min08"></div>
-        <div class = "dark" style = "left:170px;top:250px" id = "min02"></div>
-        <div class = "dark" style = "left:170px;top:300px" id = "min01"></div>
-      </div>
+      <h1>Concentrating Solar Power</h1>
       </div>
     </div>
   </body>
   <script>
-    setInterval(function(){
-      var now = new Date();
-      var hour = now.getHours();
-      if(hour>12){
-        hour-=12;
-      }
-      var min = now.getMinutes();
-      var hour1 = Math.floor(hour/10).toString(2).split("");
-      var hour0 = Math.floor(hour%10).toString(2).split("");
-      var min1 = Math.floor(min/10).toString(2).split("");
-      var min0 = Math.floor(min%10).toString(2).split("");
-      //calculate minute bits in ones' place
-      for(var i = 1; i<=8; i*=2){
-        if(min0[0]&& min0.pop()==1){
-          
-          $("#min0"+i).addClass("lit").removeClass("dark");
-          
-        } else {
-          $("#min0"+i).addClass("dark").removeClass("lit");
-        }
-      }
-      for(var i = 1; i<=4; i*=2){
-        if(min1[0]&& min1.pop()==1){
-          
-          $("#min1"+i).addClass("lit").removeClass("dark");
-          
-        } else {
-          $("#min1"+i).addClass("dark").removeClass("lit");
-        }
-      }
-      for(var i = 1; i<=8; i*=2){
-        if(hour0[0]&& hour0.pop()==1){
-          
-          $("#hour0"+i).addClass("lit").removeClass("dark");
-          
-        } else {
-          $("#hour0"+i).addClass("dark").removeClass("lit");
-        }
-      }
-      for(var i = 1; i<=2; i*=2){
-        if(hour1[0]&& hour1.pop()==1){
-          
-          $("#hour1"+i).addClass("lit").removeClass("dark");
-          
-        } else {
-          $("#hour1"+i).addClass("dark").removeClass("lit");
-        }
-      }
-    },1000)
+    
   </script>
 </html>

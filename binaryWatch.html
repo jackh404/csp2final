@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Binary Clock</title>
+    <link rel="stylesheet" href="mainStyle.css">
+    <script src="scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        //Loads main nav menu from menu.html
+      $(document).ready(function(){$("#nav").load("menu.html")});
+    </script>
+  </head>
+  <body>
+    <div id = "nav"></div>
+    <div class = "container">
+      <div class = "overlay">
+      <h1>Binary Clock</h1>
+      <div class = "watchFace">
+        <div class = "dark" style = "left:0px;top:300px" id = "hour11"></div>
+        <div class = "dark" style = "left:0px;top:250px" id = "hour12"></div>
+        <div class = "dark" style = "left:50px;top:300px" id = "hour01"></div>
+        <div class = "dark" style = "left:50px;top:250px" id = "hour02"></div>
+        <div class = "dark" style = "left:50px;top:200px" id = "hour04"></div>
+        <div class = "dark" style = "left:50px;top:150px" id = "hour08"></div>
+        <div class = "dark" style = "left:120px;top:200px" id = "min14"></div>
+        <div class = "dark" style = "left:120px;top:250px" id = "min12"></div>
+        <div class = "dark" style = "left:120px;top:300px" id = "min11"></div>
+        <div class = "dark" style = "left:170px;top:200px" id = "min04"></div>
+        <div class = "dark" style = "left:170px;top:150px" id = "min08"></div>
+        <div class = "dark" style = "left:170px;top:250px" id = "min02"></div>
+        <div class = "dark" style = "left:170px;top:300px" id = "min01"></div>
+      </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    binaryWatch();
+    setInterval(binaryWatch,1000);
+  </script>
+</html>
