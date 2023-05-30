@@ -17,6 +17,7 @@
     <div class = "container">
       <div class = "overlay">
       <h1>Binary Clock</h1>
+      <!--Creates all the dots for the clockface and sets them to the "off" class-->
       <div class = "watchFace">
         <div class = "dark" style = "left:0px;top:300px" id = "hour11"></div>
         <div class = "dark" style = "left:0px;top:250px" id = "hour12"></div>
@@ -36,7 +37,9 @@
     </div>
   </body>
   <script>
+    //initial set upon page load
     binaryWatch();
+    //set the time on the binary clockface once per second, using the function located in "scripts.js"
     setInterval(binaryWatch,1000);
   </script>
 </html>

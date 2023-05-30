@@ -32,10 +32,13 @@ function slide($lider,list,way,$caption,$link,index)
 function binaryWatch(){
     var now = new Date();
     var hour = now.getHours();
+    //12 hour clock
     if(hour>12){
       hour-=12;
     }
     var min = now.getMinutes();
+
+    //separates the digits, turns them into binary strings, and turns those strings into arrays
     var hour1 = Math.floor(hour/10).toString(2).split("");
     var hour0 = Math.floor(hour%10).toString(2).split("");
     var min1 = Math.floor(min/10).toString(2).split("");
