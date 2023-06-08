@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>P5.js Starter Page</title>
+    <!-- Import p5.js from the interwebs -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+</head>
+<body>
+    <h1>Name your project!</h1>
+
+    <!-- Your Processing sketch will liv in this div (see JavaScript below)-->
+    <div id = "sketch"></div>
+
+    <script>
+        //Between these script tags, we're working in JavaScript!
+
+        //Images work slightly different outside of Khan Academy. Step One: Create a variable
+        var coolHopper;
+
+        /* Step Two: Use the loadImage function within the preload function to retrieve 
+         * the image from a url and set it to your variable */
+        function preload(){
+            //sample image from KA
+            coolHopper = loadImage("https://cdn.kastatic.org/images/scratchpads/cool-critter.png");
+        }
+
+        //Setup function is hidden on Khan Academy, but is necessary for Processing to work.
+        function setup() {
+
+            //Create drawing canvas. 400x400 is the size used on KA, feel free to change it here.
+            var canvas = createCanvas(400, 400);
+
+            /* Sets the div we created earlier as the "parent" of the P5js sketch, in other words 
+            * where it will load on the page.*/
+            canvas.parent("sketch");
+
+            //Sets the framerate. Feel free to change, but note that performance may change as well.
+            frameRate(60);
+        }
+
+        /*******************************************************************************************
+         *                                                                                         *
+         *                                                                                         *
+         *                Your code goes here!!!! I made a sample sketch for you.                  *
+         *                                                                                         *
+         *                                                                                         *
+         ******************************************************************************************/
+        var xVelocity = 2;
+        var yVelocity = 3;
+        var xPos = 200;
+        var yPos = 200;
+
+        function draw(){
+            background(color(106, 195, 255));
+            image(coolHopper,xPos,yPos,80,80);
+            xPos += xVelocity;
+            yPos += yVelocity;
+            if(xPos > 320 || xPos < 0){
+                xVelocity *= -1;
+            }
+            if(yPos > 320 || yPos < 0){
+                yVelocity *= -1;
+            }
+        }
+        
+    </script>
+</body>
+</html>
